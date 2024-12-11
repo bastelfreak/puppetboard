@@ -31,6 +31,7 @@ jobs:
         run: |
           poetry run pytest --cov=. --cov-report=xml --strict-markers --mypy -v puppetboard test
           poetry run pylint --errors-only puppetboard test
+          poetry build
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v5.0.7
         with:
